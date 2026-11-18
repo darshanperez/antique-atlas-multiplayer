@@ -31,7 +31,6 @@ public final class AtlasFriendsMerger {
 		UUID selfUuid = client.player.getUuid();
 		String selfName = client.player.getGameProfile().getName();
 		Map<String, Map.Entry<UUID, PlayerSummary>> live = collectLivePlayers(client, selfUuid, selfName);
-		if (live.isEmpty()) return original;
 
 		// Antique Atlas expects the local player last (drawn on top of everyone else).
 		UUID surveyorSelf = SurveyorClient.getClientUuid();
@@ -42,6 +41,10 @@ public final class AtlasFriendsMerger {
 				self = entry;
 				continue;
 			}
+			// Surveyor remembers every player who ever joined the world (e.g. on a LAN host)
+			// and Antique Atlas draws them greyed out at their last known position.
+			// Only show players who are actually online.
+			if (!entry.getValue().online()) continue;
 			// If we have a live position for the same player, prefer it over Surveyor's
 			// (which may be an old position of an offline player).
 			Map.Entry<UUID, PlayerSummary> livePlayer = live.remove(entry.getValue().username());
