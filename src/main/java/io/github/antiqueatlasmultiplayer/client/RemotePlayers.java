@@ -1,6 +1,6 @@
-package io.github.atlasmultiplayer.client;
+package io.github.antiqueatlasmultiplayer.client;
 
-import io.github.atlasmultiplayer.network.PlayerPositionsPayload;
+import io.github.antiqueatlasmultiplayer.network.PlayerPositionsPayload;
 import net.minecraft.util.Util;
 
 import java.util.List;

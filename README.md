@@ -1,8 +1,8 @@
-# Atlas Multiplayer
+# Antique Atlas Multiplayer
 
 An addon for [Antique Atlas](https://github.com/sleepingdragoninn/antique-atlas) (Fabric, Minecraft 1.21.1) that shows **every player on the server** on your atlas map, both on the atlas screen and on the handheld atlas.
 
-![Atlas Multiplayer demo](docs/media/demo.gif)
+![Antique Atlas Multiplayer demo](docs/media/demo.gif)
 
 On its own, Antique Atlas only draws players who share their map with you through Surveyor (`/surveyor share`). This mod adds everyone else.
 
@@ -20,14 +20,14 @@ As in Antique Atlas, only players in the dimension you're viewing are shown.
 
 | Side   | Required mods |
 |--------|---------------|
-| Client | Fabric API, Antique Atlas (+ Surveyor), **Atlas Multiplayer** |
-| Server | Fabric API, **Atlas Multiplayer** (Antique Atlas is not needed) |
+| Client | Fabric API, Antique Atlas (+ Surveyor), **Antique Atlas Multiplayer** |
+| Server | Fabric API, **Antique Atlas Multiplayer** (Antique Atlas is not needed) |
 
 To see players at any distance, the mod must be installed on both the server and the clients.
 
 ## Configuration (server)
 
-`config/atlas_multiplayer.properties`, created on first launch:
+`config/antique_atlas_multiplayer.properties`, created on first launch:
 
 | Key | Default | Description |
 |-----|---------|-------------|

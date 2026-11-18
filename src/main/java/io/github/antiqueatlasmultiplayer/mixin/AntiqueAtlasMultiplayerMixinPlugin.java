@@ -1,4 +1,4 @@
-package io.github.atlasmultiplayer.mixin;
+package io.github.antiqueatlasmultiplayer.mixin;
 
 import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.tree.ClassNode;
@@ -12,7 +12,7 @@ import java.util.Set;
  * Only applies the Antique Atlas mixins when that mod is installed, so this mod
  * can also be installed on dedicated servers (which don't run Antique Atlas).
  */
-public class AtlasMultiplayerMixinPlugin implements IMixinConfigPlugin {
+public class AntiqueAtlasMultiplayerMixinPlugin implements IMixinConfigPlugin {
 	@Override
 	public void onLoad(String mixinPackage) {
 	}

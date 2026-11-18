@@ -1,4 +1,4 @@
-# Atlas Multiplayer — Showcase
+# Antique Atlas Multiplayer — Showcase
 
 <!-- Put your GIFs/screenshots in docs/media/ and reference them here. -->
 

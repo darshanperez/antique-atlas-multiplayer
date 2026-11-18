@@ -1,8 +1,8 @@
 {
 	"required": true,
 	"minVersion": "0.8",
-	"package": "io.github.atlasmultiplayer.mixin",
-	"plugin": "io.github.atlasmultiplayer.mixin.AtlasMultiplayerMixinPlugin",
+	"package": "io.github.antiqueatlasmultiplayer.mixin",
+	"plugin": "io.github.antiqueatlasmultiplayer.mixin.AntiqueAtlasMultiplayerMixinPlugin",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
 		"AntiqueAtlasMixin"

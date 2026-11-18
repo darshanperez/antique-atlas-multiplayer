@@ -1,6 +1,6 @@
-package io.github.atlasmultiplayer.network;
+package io.github.antiqueatlasmultiplayer.network;
 
-import io.github.atlasmultiplayer.AtlasMultiplayer;
+import io.github.antiqueatlasmultiplayer.AntiqueAtlasMultiplayer;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.packet.CustomPayload;
@@ -16,7 +16,7 @@ import java.util.UUID;
  * Server -> client: positions of every online player (except the receiver).
  */
 public record PlayerPositionsPayload(List<Entry> players) implements CustomPayload {
-	public static final Id<PlayerPositionsPayload> ID = new Id<>(AtlasMultiplayer.id("player_positions"));
+	public static final Id<PlayerPositionsPayload> ID = new Id<>(AntiqueAtlasMultiplayer.id("player_positions"));
 	public static final PacketCodec<PacketByteBuf, PlayerPositionsPayload> CODEC = PacketCodec.of(PlayerPositionsPayload::write, PlayerPositionsPayload::read);
 
 	/** Defensive limit so we never accept absurdly large packets. */

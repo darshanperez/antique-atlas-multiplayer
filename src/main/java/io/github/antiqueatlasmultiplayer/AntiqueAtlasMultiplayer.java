@@ -1,6 +1,6 @@
-package io.github.atlasmultiplayer;
+package io.github.antiqueatlasmultiplayer;
 
-import io.github.atlasmultiplayer.network.PlayerPositionsPayload;
+import io.github.antiqueatlasmultiplayer.network.PlayerPositionsPayload;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
@@ -19,11 +19,11 @@ import java.util.List;
  * Common/server side: registers the payload and periodically broadcasts every
  * player's position to the clients that have the mod installed.
  */
-public class AtlasMultiplayer implements ModInitializer {
-	public static final String MOD_ID = "atlas_multiplayer";
+public class AntiqueAtlasMultiplayer implements ModInitializer {
+	public static final String MOD_ID = "antique_atlas_multiplayer";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	public static AtlasMultiplayerConfig CONFIG;
+	public static AntiqueAtlasMultiplayerConfig CONFIG;
 
 	public static Identifier id(String path) {
 		return Identifier.of(MOD_ID, path);
@@ -31,9 +31,9 @@ public class AtlasMultiplayer implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		CONFIG = AtlasMultiplayerConfig.load();
+		CONFIG = AntiqueAtlasMultiplayerConfig.load();
 		PayloadTypeRegistry.playS2C().register(PlayerPositionsPayload.ID, PlayerPositionsPayload.CODEC);
-		ServerTickEvents.END_SERVER_TICK.register(AtlasMultiplayer::onServerTick);
+		ServerTickEvents.END_SERVER_TICK.register(AntiqueAtlasMultiplayer::onServerTick);
 	}
 
 	private static void onServerTick(MinecraftServer server) {

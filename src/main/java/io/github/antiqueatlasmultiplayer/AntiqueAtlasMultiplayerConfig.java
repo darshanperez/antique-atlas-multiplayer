@@ -1,4 +1,4 @@
-package io.github.atlasmultiplayer;
+package io.github.antiqueatlasmultiplayer;
 
 import net.fabricmc.loader.api.FabricLoader;
 
@@ -10,9 +10,9 @@ import java.nio.file.Path;
 import java.util.Properties;
 
 /**
- * Server-side config: {@code config/atlas_multiplayer.properties}.
+ * Server-side config: {@code config/antique_atlas_multiplayer.properties}.
  */
-public final class AtlasMultiplayerConfig {
+public final class AntiqueAtlasMultiplayerConfig {
 	/** How often positions are sent, in ticks (20 ticks = 1 second). */
 	public int updateIntervalTicks = 10;
 	/** Show players in spectator mode. */
@@ -22,15 +22,15 @@ public final class AtlasMultiplayerConfig {
 	/** Show players who are sneaking. */
 	public boolean showSneaking = true;
 
-	public static AtlasMultiplayerConfig load() {
-		Path path = FabricLoader.getInstance().getConfigDir().resolve(AtlasMultiplayer.MOD_ID + ".properties");
-		AtlasMultiplayerConfig config = new AtlasMultiplayerConfig();
+	public static AntiqueAtlasMultiplayerConfig load() {
+		Path path = FabricLoader.getInstance().getConfigDir().resolve(AntiqueAtlasMultiplayer.MOD_ID + ".properties");
+		AntiqueAtlasMultiplayerConfig config = new AntiqueAtlasMultiplayerConfig();
 		Properties props = new Properties();
 		if (Files.exists(path)) {
 			try (Reader reader = Files.newBufferedReader(path)) {
 				props.load(reader);
 			} catch (IOException e) {
-				AtlasMultiplayer.LOGGER.warn("[Atlas Multiplayer] Could not read {}, using defaults", path, e);
+				AntiqueAtlasMultiplayer.LOGGER.warn("[Antique Atlas Multiplayer] Could not read {}, using defaults", path, e);
 			}
 		}
 		config.updateIntervalTicks = Math.max(1, parseInt(props.getProperty("updateIntervalTicks"), config.updateIntervalTicks));
@@ -50,10 +50,10 @@ public final class AtlasMultiplayerConfig {
 		try {
 			Files.createDirectories(path.getParent());
 			try (Writer writer = Files.newBufferedWriter(path)) {
-				props.store(writer, "Atlas Multiplayer (server side). updateIntervalTicks: 20 = 1 second.");
+				props.store(writer, "Antique Atlas Multiplayer (server side). updateIntervalTicks: 20 = 1 second.");
 			}
 		} catch (IOException e) {
-			AtlasMultiplayer.LOGGER.warn("[Atlas Multiplayer] Could not save {}", path, e);
+			AntiqueAtlasMultiplayer.LOGGER.warn("[Antique Atlas Multiplayer] Could not save {}", path, e);
 		}
 	}
 

@@ -1,8 +1,8 @@
-package io.github.atlasmultiplayer.client;
+package io.github.antiqueatlasmultiplayer.client;
 
 import folk.sisby.surveyor.PlayerSummary;
 import folk.sisby.surveyor.client.SurveyorClient;
-import io.github.atlasmultiplayer.network.PlayerPositionsPayload;
+import io.github.antiqueatlasmultiplayer.network.PlayerPositionsPayload;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;

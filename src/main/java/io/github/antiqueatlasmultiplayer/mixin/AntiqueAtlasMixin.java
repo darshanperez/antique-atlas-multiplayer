@@ -1,8 +1,8 @@
-package io.github.atlasmultiplayer.mixin;
+package io.github.antiqueatlasmultiplayer.mixin;
 
 import folk.sisby.antique_atlas.AntiqueAtlas;
 import folk.sisby.surveyor.PlayerSummary;
-import io.github.atlasmultiplayer.client.AtlasFriendsMerger;
+import io.github.antiqueatlasmultiplayer.client.AtlasFriendsMerger;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -19,7 +19,7 @@ import java.util.UUID;
 @Mixin(value = AntiqueAtlas.class, remap = false)
 public abstract class AntiqueAtlasMixin {
 	@Inject(method = "getOrderedFriends", at = @At("RETURN"), cancellable = true)
-	private static void atlasMultiplayer$addAllPlayers(CallbackInfoReturnable<Map<UUID, PlayerSummary>> cir) {
+	private static void antiqueAtlasMultiplayer$addAllPlayers(CallbackInfoReturnable<Map<UUID, PlayerSummary>> cir) {
 		cir.setReturnValue(AtlasFriendsMerger.merge(cir.getReturnValue()));
 	}
 }
