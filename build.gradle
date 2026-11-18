@@ -1,6 +1,7 @@
 plugins {
 	id "fabric-loom" version "${loom_version}"
 	id "maven-publish"
+	id "com.modrinth.minotaur" version "2.10.0"
 }
 
 version = "${mod_version}+${minecraft_version}"
@@ -57,5 +58,28 @@ java {
 jar {
 	from("LICENSE") {
 		rename { "${it}_${base.archivesName.get()}" }
+	}
+}
+
+// Publish to Modrinth: MODRINTH_TOKEN=... ./gradlew modrinth
+// Dry run (prints the request, uploads nothing): ./gradlew modrinth -PmodrinthDebug
+// Sync the project page from README.md: ./gradlew modrinthSyncBody
+modrinth {
+	token = System.getenv("MODRINTH_TOKEN")
+	projectId = "antique-atlas-multiplayer"
+	versionNumber = project.version
+	versionName = "${project.mod_version} for Minecraft ${project.minecraft_version}"
+	versionType = "release"
+	uploadFile = remapJar
+	additionalFiles = [remapSourcesJar]
+	gameVersions = [project.minecraft_version]
+	loaders = ["fabric"]
+	changelog = rootProject.file("CHANGELOG.md").text
+	syncBodyFrom = rootProject.file("README.md").text
+	debugMode = project.hasProperty("modrinthDebug")
+	dependencies {
+		required.project "fabric-api"
+		optional.project "antique-atlas-4"
+		optional.project "surveyor"
 	}
 }

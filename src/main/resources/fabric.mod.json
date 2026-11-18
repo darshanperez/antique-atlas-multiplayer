@@ -5,7 +5,14 @@
 	"name": "Antique Atlas Multiplayer",
 	"description": "Antique Atlas addon: shows every other player on the server on your atlas.",
 	"authors": ["darshan"],
+	"contact": {
+		"email": "darshan.dev@tutamail.com",
+		"homepage": "https://modrinth.com/mod/antique-atlas-multiplayer",
+		"sources": "https://github.com/darshanperez/antique-atlas-multiplayer",
+		"issues": "https://github.com/darshanperez/antique-atlas-multiplayer/issues"
+	},
 	"license": "LGPL-3.0-or-later",
+	"icon": "assets/antique_atlas_multiplayer/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
