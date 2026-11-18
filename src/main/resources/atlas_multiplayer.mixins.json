@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "io.github.atlasmultiplayer.mixin",
+	"plugin": "io.github.atlasmultiplayer.mixin.AtlasMultiplayerMixinPlugin",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"AntiqueAtlasMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

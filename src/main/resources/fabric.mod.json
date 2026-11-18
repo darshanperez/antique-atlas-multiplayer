@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "atlas_multiplayer",
+	"version": "${version}",
+	"name": "Atlas Multiplayer",
+	"description": "Antique Atlas addon: shows every other player on the server on your atlas.",
+	"authors": [],
+	"license": "LGPL-3.0-or-later",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"io.github.atlasmultiplayer.AtlasMultiplayer"
+		],
+		"client": [
+			"io.github.atlasmultiplayer.client.AtlasMultiplayerClient"
+		]
+	},
+	"mixins": [
+		"atlas_multiplayer.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=${loader_version}",
+		"minecraft": "~${minecraft_version}",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"recommends": {
+		"antique_atlas": ">=3.1.0"
+	}
+}
